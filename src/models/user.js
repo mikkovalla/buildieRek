@@ -114,6 +114,17 @@ userSchema.pre('remove', async function (next) {
   next();
 });
 
+userSchema.statics.format = (user) => {
+  return {
+    id: user._id,
+    name: user.name,
+    age: user.age,
+    email: user.email,
+    created: user.createdAt,
+    updated: user.updatedAt
+  }
+}
+
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;

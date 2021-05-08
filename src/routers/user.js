@@ -10,10 +10,7 @@ router.post('/users', async (req, res) => {
   try {
     await user.save();
     const token = await user.generateAuthToken();
-    res.status(201).send({
-      user,
-      token
-    });
+    res.status(200).send(User.format(user));
   } catch (error) {
     res.status(400).send(error);
   }
@@ -22,7 +19,7 @@ router.post('/users', async (req, res) => {
 router.get('/users/me', auth, async (req, res) => {
   try {
     const user = await User.findOne({});
-    res.status(200).send(user)
+    res.status(200).send(User.format(user))
   } catch (error) {
     res.status(400).send({
       Error: error
