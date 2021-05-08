@@ -13,7 +13,7 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use('/api', userRouter);
 app.use(taskRouter);
-app.use(authRouter);
+app.use('/api', authRouter);
 
 const server = http.createServer(app)
 server.listen(port, () => {
