@@ -19,6 +19,14 @@ const taskSchema = new mongoose.Schema({
   timestamps: true
 });
 
+taskSchema.statics.format = (task) => {
+  return {
+    description: task.description,
+    completed: task.completed,
+    owner: task.owner
+  }
+}
+
 const Task = mongoose.model('Task', taskSchema);
 
 module.exports = Task;

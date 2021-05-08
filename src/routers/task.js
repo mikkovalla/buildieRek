@@ -1,6 +1,8 @@
 const express = require('express');
 const Task = require('../models/task');
 const auth = require('../middleware/auth');
+const { response } = require('express');
+const User = require('../models/user');
 const router = new express.Router();
 
 router.get('/tasks/:id', auth, async (req, res) => {
@@ -18,6 +20,13 @@ router.get('/tasks/:id', auth, async (req, res) => {
     res.status(500).send();
   }
 });
+
+router.get('/tasks', auth, async (req, res) => {
+  const tasks = await Task.find({}).populate('user', {
+    owner: req.user._id
+  })
+  res.status(200).json(tasks.map(Task.format))
+})
 
 router.post('/tasks', auth, async (req, res) => {
   const task = new Task({
