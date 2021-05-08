@@ -1,6 +1,6 @@
 require('dotenv').config();
 const express = require('express');
-require('./db/mongoose');
+const mongo = require('./db/mongoose');
 const http = require('http')
 const userRouter = require('./routers/user');
 const taskRouter = require('./routers/task');
@@ -19,3 +19,7 @@ const server = http.createServer(app)
 server.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+server.on('close', () => {
+  mongo.connection.close()
+})
