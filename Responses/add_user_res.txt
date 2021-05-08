@@ -1,0 +1,21 @@
+HTTP/1.1 201 Created
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 411
+ETag: W/"19b-WpGlRvlPgX+7iimaujeReovbWVc"
+Date: Sat, 08 May 2021 10:23:47 GMT
+Connection: close
+
+{
+  "user": {
+    "age": 0,
+    "_id": "609666b370183dadeba6d906",
+    "name": "Mikko",
+    "email": "mikko@mikko.fi",
+    "password": "$2a$08$KNg7GTsRW666mCtuRNY8YOzGj.BlginOD7eCU.cFU63F5BUrD2v/C",
+    "createdAt": "2021-05-08T10:23:47.060Z",
+    "updatedAt": "2021-05-08T10:23:47.117Z",
+    "__v": 1
+  },
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDk2NjZiMzcwMTgzZGFkZWJhNmQ5MDYiLCJpYXQiOjE2MjA0Njk0Mjd9.BPKBqUHcONr94XYg9fcKPni-2PMN2ZpIR0ya6_Efz38"
+}
