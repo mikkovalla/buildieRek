@@ -1,6 +1,7 @@
-GET http://localhost:3000/api/users/me
+POST http://localhost:3000/api/logout
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDk2NjZiMzcwMTgzZGFkZWJhNmQ5MDYiLCJpYXQiOjE2MjA0NzE2NDB9.XSJPHI-gklJFb0iQ_ZH0-Io8PpHG05iPpB6aVmJlOuU
 
 {
+
 }

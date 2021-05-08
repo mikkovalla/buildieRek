@@ -1,0 +1,18 @@
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 242
+ETag: W/"f2-nRGap5fpi8hf922BSsmYRSLbkkU"
+Date: Sat, 08 May 2021 12:12:35 GMT
+Connection: close
+
+{
+  "age": 0,
+  "_id": "609666b370183dadeba6d906",
+  "name": "Mikko",
+  "email": "mikko@mikko.fi",
+  "password": "$2a$08$KNg7GTsRW666mCtuRNY8YOzGj.BlginOD7eCU.cFU63F5BUrD2v/C",
+  "createdAt": "2021-05-08T10:23:47.060Z",
+  "updatedAt": "2021-05-08T11:40:38.760Z",
+  "__v": 7
+}
