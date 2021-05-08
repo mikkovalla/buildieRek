@@ -28,8 +28,11 @@ router.get('/tasks/:id', auth, async (req, res) => {
 
 router.get('/tasks', auth, async (req, res) => {
   const countTasks = await Task.countDocuments()
+
   const {
-    latest = true, completed = false
+    completed,
+    latestFirst,
+    oldestFirst
   } = req.query
   const limit = parseInt(req.query.limit || 10)
   const page = parseInt(req.query.page || 1)
@@ -41,7 +44,25 @@ router.get('/tasks', auth, async (req, res) => {
     .limit(limit)
     .skip((page - 1) * limit)
 
+  //sort tasks by completed status
+  if (completed !== undefined) {
+    if (completed === 'true') {
+      tasks.sort((a, b) => (a.completed === b.completed) ? 0 : a.completed ? -1 : 1)
+    }
+    if (completed === 'false') {
+      tasks.sort((a, b) => (a.completed === b.completed) ? 0 : a.completed ? 1 : -1)
+    }
+  }
+  //sort tasks by date
+  if (oldestFirst) {
+    tasks.sort((a, b) => b.createdAt - a.createdAt)
+  }
+  if (latestFirst) {
+    tasks.sort((a, b) => b.createdAt - a.createdAt).reverse()
+  }
+
   const formattedTasks = tasks.map(Task.format)
+
   res.status(200).json({
     task: formattedTasks,
     pages: Math.ceil(countTasks / limit),
