@@ -3,5 +3,5 @@ content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDk2ODhjMWM0ZWNhZWM3ZmJkMzYxYjMiLCJpYXQiOjE2MjA0NzgyMTN9.mIp4yg4nbXtVc4cVuO4w4PLv5eiqWGbMdL_EDLmizeI
 
 {
-   "name": "MiksutusMaksimus", "namee": "jjj"
+   "namee": "MiksutusMaksimus5", "age": 55
 }

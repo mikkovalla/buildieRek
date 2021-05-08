@@ -40,20 +40,16 @@ router.delete("/users/me", auth, async (req, res) => {
 })
 
 router.patch("/users/me", auth, async (req, res) => {
+//findByIdAndUpdate only updates valid properties and ignores unknown properties
 
   if (!req.body) return res.status(400).send({
     Error: "No values"
   })
-  const allowedProperties = [ "name", "email", "password", "age" ];
+
   const values = Object.entries(req.body)
   const reqValues = Object.fromEntries(values)
-  const allowedUpdate = allowedProperties.filter(property => !reqValues.hasOwnProperty(property))
-  console.log(allowedUpdate)
-  if(allowedUpdate.length === 4) return res.status(400).send({
-    Error: "nothing to update or property names are wrong"
-  })
 
-  try { 
+  try {
     const user = await User.findOne({})
     const updatedUser = await User.findByIdAndUpdate(user._id, reqValues)
     res.status(200).send(`User ${updatedUser.name} succesfully updated!`)
