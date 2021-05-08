@@ -18,7 +18,9 @@ router.post('/users', async (req, res) => {
 
 router.get('/users/me', auth, async (req, res) => {
   try {
-    const user = await User.findOne({});
+    const user = await User.findOne({
+      'tokens.token': req.token
+    });
     res.status(200).send(User.format(user))
   } catch (error) {
     res.status(400).send({
@@ -29,7 +31,9 @@ router.get('/users/me', auth, async (req, res) => {
 
 router.delete("/users/me", auth, async (req, res) => {
   try {
-    const user = await User.findOne({})
+    const user = await User.findOne({
+      'tokens.token': req.token
+    });
     await user.remove()
     res.status(200).send(`User ${user.name} succesfully removed!`)
   } catch (error) {
@@ -50,7 +54,9 @@ router.patch("/users/me", auth, async (req, res) => {
   const reqValues = Object.fromEntries(values)
 
   try {
-    const user = await User.findOne({})
+    const user = await User.findOne({
+      'tokens.token': req.token
+    });
     const updatedUser = await User.findByIdAndUpdate(user._id, reqValues)
     res.status(200).send(`User ${updatedUser.name} succesfully updated!`)
   } catch (error) {

@@ -2,5 +2,5 @@ POST http://localhost:3000/api/users
 content-type: application/json
 
 {
-"name": "Mikko", "email": "mikko@mikko.fi", "password": "mikko12345"
+"name": "Pekka", "email": "pekka@pekka.fi", "password": "pekka12345"
 }

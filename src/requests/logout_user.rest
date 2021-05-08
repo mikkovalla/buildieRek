@@ -1,7 +1,6 @@
 POST http://localhost:3000/api/logout
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDk2NjZiMzcwMTgzZGFkZWJhNmQ5MDYiLCJpYXQiOjE2MjA0NzE2NDB9.XSJPHI-gklJFb0iQ_ZH0-Io8PpHG05iPpB6aVmJlOuU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDk2YzBmZTFlZmU0OGVkN2E0NTE2NjgiLCJpYXQiOjE2MjA0OTI1NDJ9.UudleTwBYMLFvPp4auWsgnCZDNmJ3d9EIw707Pdq66o
 
 {
-
 }
