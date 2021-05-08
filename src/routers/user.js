@@ -20,9 +20,23 @@ router.post('/users', async (req, res) => {
 });
 
 router.get('/users/me', auth, async (req, res) => {
-  const user = await User.findOne({});
-  res.status(200).send(user)
+  try {
+    const user = await User.findOne({});
+    res.status(200).send(user)
+  } catch (error) {
+    res.status(400).send({Error: error})
+  }
 });
+
+router.delete("/users/me", auth, async (req, res) => {
+  try {
+    const user = await User.findOne({})
+    await user.remove()
+    res.status(200).send(`User ${user.name} succesfully removed!`)
+  } catch (error) {
+    res.status(400).send({Error: error})
+  }
+})
 
 
 module.exports = router;

@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: text/html; charset=utf-8
+Content-Length: 31
+ETag: W/"1f-mKXlZoOSI2zw4xpo11IUK3/erGE"
+Date: Sat, 08 May 2021 12:24:20 GMT
+Connection: close
+
+User Mikko succesfully removed!
